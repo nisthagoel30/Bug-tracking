@@ -1,0 +1,87 @@
+create database BDS;
+
+use BDS;
+                                                                                                         TABLE EMPLOYEE
+ create table employee(empCode int(4) primary key, empName varchar(30) not null, empEmail varchar(40) not null,empPassword varchar(50) not null, gender varchar(10), DOB varchar(20), mobileNo bigint, Role varchar(20) not null, unique(empEmail), unique(mobileNo))engine=InnoDb;
+
+ insert into employee values(1111,'Steven king','sking@gmail.com',md5('king1111'),'Male','17-6-1993',7894551264,'Manager');
+ insert into employee values(1112,'Muskan Singhal','msinghal@gmail.com',md5('singhal1112'),'Female','01-11-1999',7555555598,'Admin');
+ insert into employee values(1113,'David Austin','daustin@gmail.com',md5('austin1113'),'Male','11-12-1995',7557849598,'Developer');
+ insert into employee values(1114,'John Seo','jseo@gmail.com',md5('seo1114'),'Male','14-06-1995',9587461578,'Tester');
+ insert into employee values(1115,'Nistha Goel','ngoel@gmail.com',md5('goel1115'),'Female','07-07-1996',8459761238,'Admin');
+ insert into employee values(1116,'Patrick Sully','psully@gmail.com',md5('sully1116'),'Male','31-01-1994',8259746312,'Tester');
+ insert into employee values(1117,'Clara Vishney','cvishney@gmail.com',md5('vishney1117'),'Female','26-08-1997',9687451235,'Developer');
+ insert into employee values(1118,'Joshua Patel','jpatel@gmail.com',md5('patel1118'),'Male','18-03-1995',8527419636,'Developer');
+ insert into employee values(1119,'Daniel Matos','dmatos@gmail.com',md5('matos1119'),'Male','24-11-1997',6987542584,'Tester');
+ insert into employee values(1120,'Taylor Fox','tfox@gmail.com',md5('fox1120'),'Male','10-10-1993',7845129461,'Manager');
+ insert into employee values(1121,'Mayank Giri','mgiri@gmail.com',md5('giri1121'),'Male','15-02-1998',6897451283,'Admin');
+ insert into employee values(1122,'Allen Hall','ahall@gmail.com',md5('hall1122'),'Male','12-12-1999',6974581239,'Tester');
+ insert into employee values(1123,'Jack Gates','jgates@gmail.com',md5('gates1123'),'Male','17-05-1989',9568723415,'Developer');
+ insert into employee values(1124,'Kelly Perkins','kperkins@gmail.com',md5('perkins1124'),'Female','04-08-1995',7698412394,'Admin');
+ insert into employee values(1125,'Sarah Bell','sbell@gmail.com',md5('bell1125'),'Female','12-01-1997',6258974139,'Developer');
+
+                                                                                                             TABLE PROJECT
+create table project( projectId varchar(6) primary key, projectName varchar(30) not null, SDate varchar(30) not null, EDate varchar(30), projectDesc text, unique(projectName))engine=InnoDb;
+INSERT INTO PROJECT VALUES("P101", "EMPLOYEE MANAGEMENT SYSTEM","2001-01-19","2003-03-27","To add,update,delete the profile details of an employee");
+INSERT INTO PROJECT VALUES("P102", "Titan","07-12-2009","23-03-2013","Apple is mum, but Insiders report that the company is working on a car called \"Titan,\" slated to be road-ready in 2019. With a name that gigantic, buzz is already building about the features that may or may not rival Google’s self-driving cars.");
+INSERT INTO PROJECT VALUES("P103","Project Hanks","19-10-2014","20-09-2018","Earlier this year, when Verizon Communications was looking to take over AOL, they needed to keep the deal secret and came up with a code name. According to the Telegraph, Project Hanks is the name they chose, which may not make sense until you remember that Tom Hanks starred in the movie You’ve Got Mail (1998), a romantic comedy about a relationship built on AOL’s famous mail notification.");
+INSERT INTO PROJECT VALUES("P104","Kodiak","10-10-2008","20-11-2018","Unlike some other companies that have a codename and then change it to something else when it comes to market, in 2000, Apple developed its first version of Mac OS X with the codename Kodiak. It’s since followed that theme with updates with other powerful creatures of the wild, such as Puma, Jaguar, Panther, Leopard, Snow Leopard and Lion.");
+INSERT INTO PROJECT VALUES("P105","Code Talkers","28-11-2018","05-06-2019","This was the project name for the secret WWII program to recruit Cherokee, Creek, Choctow and other tribal members to transmit coded messages in Native American languages. It was also popularized in the Nicholas Cage classic of cinema, Windtalkers.");
+INSERT INTO PROJECT VALUES("P106","Project Blue Book","27-08-1999","03-06-2003","If you don’t already know, then you probably don’t have the clearance. But for the sake of disclosure… Project Blue Book was the code name for the US Air Force investigations into UFO sightings. But you didn’t hear that from us.");
+INSERT INTO PROJECT VALUES("P107","X Lab","12-09-1987","30-12-2003","They may have been known earlier for their unofficial slogan \"Don’t be evil,\" but that doesn’t mean Google doesn’t have a secret lair. At the company’s secret \"X\" Lab, projects like the Self-Driving Car and Google Glass are built under the cloak and veil secrecy deserved of its uber-mysterious name.");
+INSERT INTO PROJECT VALUES("P108","Project 404","09-06-1999","11-11-2008","The code name for a covert US Air Force mission to Laos during the Vietnam War to supply line crew technicians. Today, it’s the code name for a webpage that can no longer be found.");
+INSERT INTO PROJECT VALUES("P109","Manhattan Project","21-09-2007","24-11-2015","The super-secret project to develop an atomic bomb during World War II was a bee hive of activity for some of the smartest minds at the time, but all they could come up with in terms of a name for their work was \"Manhattan\" because they began the research in an simple office building located in Manhattan, New York. They eventually moved to more secure environs out of the area, but the classy name remained.");
+INSERT INTO PROJECT VALUES("P110","Durango","03-11-2017","19-04-2018","When Microsoft was looking to build upon its wildly popular XBox 360 gaming console, Durango was its name-o. But like all Microsoft projects, the project name was far from the final product name. In this case, they thought long and hard and hired the best people to release the One. XBox One.");
+INSERT INTO PROJECT VALUES("P111","Apollo","23-01-2007","29-09-2009","One of the most famous projects of the last century, the Apollo program, was designed to land humans on the moon and bring them back home alive. It’s the kind of story more told in myth, which is maybe why NASA (an acronym for National Aeronautics and Space Administration) went back to the Greeks. Apollo is associated with the Greek verb meaning to destroy. That may sound counterintuitive, but in Greek mythology Apollo, son of Zeus and Leto, twin of Artemis, was the god of prophecy, medicine, music, art, law, beauty and wisdom. I guess getting to the moon required all that and more.");
+INSERT INTO PROJECT VALUES("P112","Y Lab","17-06-2004","22-12-2015","Y Lab is addressing major public services challenges in Wales.");
+
+
+
+                                                                                                                                       TABLE ASSIGNPROJECT
+create table AssignProject( projectId varchar(6), empCode  int(4), foreign key (projectId) references project(projectId) on delete cascade, foreign key (empCode) references employee(empCode) on delete cascade )engine=InnoDb;
+
+insert into AssignProject values('P101',1111);
+ insert into AssignProject values('P102',1112);
+ insert into AssignProject values('P103',1113);
+ insert into AssignProject values('P104',1114);
+ insert into AssignProject values('P105',1115);
+ insert into AssignProject values('P106',1116);
+ insert into AssignProject values('P107',1117);
+ insert into AssignProject values('P108',1118);
+ insert into AssignProject values('P109',1119);
+ insert into AssignProject values('P110',1120);
+ insert into AssignProject values('P111',1121);
+ insert into AssignProject values('P112',1122);
+
+
+                                                                                                       TABLE BUGTYPE
+create table BugType( bugcode varchar(4) primary key, bugcategory varchar(15), bugseverty varchar(100) not null )engine=InnoDb;
+
+insert into bugtype values("B1","medium","Functional Errors");
+insert into bugtype values("B2","low","Compilation Errors");
+insert into bugtype values("B3","critical","Missing commands");
+insert into bugtype values("B4","major","Run time Errors");
+insert into bugtype values("B5","major","Communication problems");
+insert into bugtype values("B6","medium","Logical errors");
+insert into bugtype values("B7","low","Inappropriate error handling");
+insert into bugtype values("B8","critical","Calculation issues");
+
+
+                                                                                                            TABLE BUGREPORT
+create table bugreport( bugNo varchar(4) primary key,bugCode varchar(4), projectId varchar(6), empCode int(4), status varchar(20) not null,bugDesc varchar(100), foreign key (bugCode) references Bugtype(bugcode) on delete cascade, foreign key (projectId) references project(projectId) on delete cascade, foreign key (empCode) references employee(empCode) on delete cascade )engine=InnoDb;
+
+insert into bugreport values("BN1","B1","P103",1113,"RESOLVED","there are many fuctional errors");
+insert into bugreport values("BN2","B3","P105",1115,"PENDING","comments are missing and there is communication problem");
+insert into bugreport values("BN3","B8","P102",1117,"RESOLVED","there are many calculation issues");
+insert into bugreport values("BN4","B6","P111",1119,"PENDING","many logical errors,not giving expected output");
+insert into bugreport values("BN5","B2","P106",1123,"RESOLVED","there are many compilation errors and no proper comments are given");
+insert into bugreport values("BN6","B1","P102",1116,"PENDING","there are many fuctional errors");
+insert into bugreport values("BN7","B5","P109",1118,"RESOLVED","communication problem with the user");
+insert into bugreport values("BN8","B4","P107",1125,"PENDING","there are many run time errors.FIX IT");
+insert into bugreport values("BN9","B7","P108",1121,"RESOLVED","proper error handling is not done causing unexpected termination");
+insert into bugreport values("BN10","B6","P110",1122,"PENDING","there are many logical errors and many absurd calculation issues");
+insert into bugreport values("BN11","B1","P104",1124,"RESOLVED","there are many fuctional errors.FIX IT!!!");
+insert into bugreport values("BN12","B7","P101",1111,"PENDING","proper error handling is not done causing unexpected termination");
+
+
+
